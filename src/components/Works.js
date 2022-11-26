@@ -24,7 +24,7 @@ const Works = () => {
         </div>
         <div className="relative grid grid-cols-2 gap-8 w-full max-w-5xl mt-10">
           {workList.map((work) => (
-            <div className="relative flex flex-col justify-center items-start p-8 bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600  z-30">
+            <div className="relative flex gap-2 flex-col justify-center items-start p-8 bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600  z-30">
               <div className="bg-rose-500 w-12 h-12 rounded-md flex justify-center items-center text-xl font-bold">
                 {work.mainLang}
               </div>
@@ -315,15 +315,50 @@ const workList = [
     longDescription:
       "Weather app that allows users search for city and add city to watch list. Used api called openweathermap.org.",
     category: "webApp",
-    thumbnail: "/images/works/trainmate/screenshot.png",
-    heroImage: "/images/works/trainmate/screenshot01.gif",
-    pageBgColor: "bg-zinc-800",
-    baseColor: "bg-indigo-700",
-    secondaryTextColor: "text-cyan-400",
-    textColor: "text-indigo-700",
+    thumbnail: "#",
+    heroImage: "#",
+    pageBgColor: "#",
+    baseColor: "#",
+    secondaryTextColor: "#",
+    textColor: "#",
     usedWhileWorking: [
       "ReactJs",
       "Redux",
+    ],
+    links: [
+      {
+        text: "Source Code </>",
+        link: "#",
+        buttonActive: false,
+      },
+      {
+        text: "Live Demo",
+        link: "#",
+        buttonActive: false,
+      },
+      {
+        text: "Video",
+        link: "#",
+        buttonActive: false,
+      },
+    ],
+  },
+  {
+    title: "CBRT Currency Tracker",
+    mainLang: "JS",
+    description: "CBRT Currency Tracker.",
+    longDescription:
+      "The Central Bank of the Republic of Turkey currency tracker. Users can register and login through Node.JS server.",
+    category: "webApp",
+    thumbnail: "#",
+    heroImage: "#",
+    pageBgColor: "#",
+    baseColor: "#",
+    secondaryTextColor: "#",
+    textColor: "#",
+    usedWhileWorking: [
+      "ReactJs",
+      "Node.Js",
     ],
     links: [
       {

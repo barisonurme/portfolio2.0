@@ -308,6 +308,41 @@ const workList = [
       },
     ],
   },
+  {
+    title: "Weather App",
+    mainLang: "JS",
+    description: "Weather App.",
+    longDescription:
+      "Weather app that allows users search for city and add city to watch list. Used api called openweathermap.org.",
+    category: "webApp",
+    thumbnail: "/images/works/trainmate/screenshot.png",
+    heroImage: "/images/works/trainmate/screenshot01.gif",
+    pageBgColor: "bg-zinc-800",
+    baseColor: "bg-indigo-700",
+    secondaryTextColor: "text-cyan-400",
+    textColor: "text-indigo-700",
+    usedWhileWorking: [
+      "ReactJs",
+      "Redux",
+    ],
+    links: [
+      {
+        text: "Source Code </>",
+        link: "#",
+        buttonActive: false,
+      },
+      {
+        text: "Live Demo",
+        link: "#",
+        buttonActive: false,
+      },
+      {
+        text: "Video",
+        link: "#",
+        buttonActive: false,
+      },
+    ],
+  },
 ];
 
 export default Works;

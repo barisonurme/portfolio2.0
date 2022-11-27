@@ -1,57 +1,56 @@
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
+
 const Works = () => {
   return (
-    <div>
-        <div className="flex justify-center items-center p-4 w-full max-w-5xl gap-4">
-          <div className="text-rose-500">All</div>
-          <div className="hover:text-rose-500 cursor-pointer duration-500">
-            Web Application
-          </div>
-          <div className="hover:text-rose-500 cursor-pointer duration-500">
-            Mobile App
-          </div>
-          <div className="hover:text-rose-500 cursor-pointer duration-500">
-            Graphic Design
-          </div>
-          <div className="hover:text-rose-500 cursor-pointer duration-500">
-            Motion Graphic
-          </div>
-          <div className="hover:text-rose-500 cursor-pointer duration-500">
-            Game Development
-          </div>
+    <div name="works">
+      <div className="flex justify-center items-center p-4 w-full max-w-5xl gap-4">
+        <div className="text-rose-500">All</div>
+        <div className="hover:text-rose-500 cursor-pointer duration-500">
+          Web Application
         </div>
-        <div className="relative grid grid-cols-2 gap-8 w-full max-w-5xl mt-10">
-          {workList.map((work) => (
-            <div className="relative flex gap-2 flex-col justify-center items-start p-8 bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600  z-30">
-              <div className="bg-rose-500 w-12 h-12 rounded-md flex justify-center items-center text-xl font-bold">
-                {work.mainLang}
-              </div>
-              <div className="text-xl">{work.title}</div>
-              <div className="text-sm text-slate-500">
-                {work.longDescription}
-              </div>
-              <div className="flex gap-2 mt-2">
-                {work.usedWhileWorking.map((used) => (
-                  <div className="text-xs p-1 tracking-wider border opacity-40 rounded-md">
-                    {used}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-10 text-rose-500 w-14 h-6 flex items-center justify-start cursor-pointer group p-4 pl-0">
-                <div className="group-hover:translate-x-10 duration-500 group-hover:opacity-0">
-                  Details
+        <div className="hover:text-rose-500 cursor-pointer duration-500">
+          Mobile App
+        </div>
+        <div className="hover:text-rose-500 cursor-pointer duration-500">
+          Graphic Design
+        </div>
+        <div className="hover:text-rose-500 cursor-pointer duration-500">
+          Motion Graphic
+        </div>
+        <div className="hover:text-rose-500 cursor-pointer duration-500">
+          Game Development
+        </div>
+      </div>
+      <div className="relative grid grid-cols-2 gap-8 w-full max-w-5xl mt-10">
+        {workList.map((work) => (
+          <div className="relative flex gap-2 flex-col justify-center items-start p-8 bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600  z-30">
+            <div className="bg-rose-500 w-12 h-12 rounded-md flex justify-center items-center text-xl font-bold">
+              {work.mainLang}
+            </div>
+            <div className="text-xl">{work.title}</div>
+            <div className="text-sm text-slate-500">{work.longDescription}</div>
+            <div className="flex gap-2 mt-2">
+              {work.usedWhileWorking.map((used) => (
+                <div className="text-xs p-1 tracking-wider border opacity-40 rounded-md">
+                  {used}
                 </div>
-                <div className="group-hover:-translate-x-8 -translate-x-16 opacity-0 group-hover:opacity-100 duration-500">
-                  <AiOutlineArrowRight />
-                </div>
+              ))}
+            </div>
+            <div className="mt-10 text-rose-500 w-14 h-6 flex items-center justify-start cursor-pointer group p-4 pl-0">
+              <div className="group-hover:translate-x-10 duration-500 group-hover:opacity-0">
+                Details
+              </div>
+              <div className="group-hover:-translate-x-8 -translate-x-16 opacity-0 group-hover:opacity-100 duration-500">
+                <AiOutlineArrowRight />
               </div>
             </div>
-          ))}
+          </div>
+        ))}
 
-          <div className="absolute w-full z-10">{circles}</div>
-        </div>
+        <div className="absolute w-full z-10">{circles}</div>
+      </div>
     </div>
   );
 };
@@ -321,10 +320,7 @@ const workList = [
     baseColor: "#",
     secondaryTextColor: "#",
     textColor: "#",
-    usedWhileWorking: [
-      "ReactJs",
-      "Redux",
-    ],
+    usedWhileWorking: ["ReactJs", "Redux"],
     links: [
       {
         text: "Source Code </>",
@@ -356,10 +352,7 @@ const workList = [
     baseColor: "#",
     secondaryTextColor: "#",
     textColor: "#",
-    usedWhileWorking: [
-      "ReactJs",
-      "Node.Js",
-    ],
+    usedWhileWorking: ["ReactJs", "Node.Js"],
     links: [
       {
         text: "Source Code </>",

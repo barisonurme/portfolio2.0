@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Works from "./components/Works";
 
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { Link } from "react-scroll";
 
 function App() {
   return (
@@ -38,11 +39,17 @@ function App() {
         <Works />
       </div>
       <div className="absolute flex w-full justify-center items-center bottom-36">
-        <div className="group">
+        <Link
+          spy={true}
+          smooth={true}
+          offset={-90}
+          to="works"
+          className="group"
+        >
           <div className="group-hover:bg-rose-500 h-16 w-16 group-hover:scale-100 scale-75 rounded-full flex justify-center items-center cursor-pointer group-hover:text-slate-900 text-rose-500 duration-500">
             <RiArrowDropDownLine size={35} className="animate-bounce" />
           </div>
-        </div>
+        </Link>
       </div>
     </>
   );

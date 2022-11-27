@@ -13,6 +13,7 @@ const SlidingText = (props) => {
     }
     setInterval(() => {
       if (number < texts.length - 1) number++;
+      // eslint-disable-next-line
       else number = 0;
       setCountDown(number);
     }, time);

@@ -67,7 +67,7 @@ const Works = () => {
           {circles}
         </div>
       </div>
-      <Work show={workModalActive} currentWork={selectedWork} />
+      <Work onBackdropClicked={() => setWorkModalActive(false)} show={workModalActive} currentWork={selectedWork} />
     </div>
   );
 };
@@ -171,7 +171,7 @@ const workList = [
     mainLang: "JS",
     description: "Real time message application with different features.",
     longDescription:
-      "Chappter is real time message application build with React Native. You can login and start chatting with anyone, add profile picture, react recieved messages",
+      "Chappter is real time message application build with React Native. You can login and start chatting with anyone, add profile picture, react recieved messages.",
     thumbnail: "/images/works/chappter/screenshot.jpg",
     heroImage: "/images/works/chappter/screenshot01.gif",
     usedWhileWorking: [

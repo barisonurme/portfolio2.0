@@ -19,7 +19,7 @@ function App() {
 
         <div className="flex w-full justify-center h-[calc(100vh-100px)] items-center">
           <div className="flex justify-center h-[calc(100vh+1000px)] items-center absolute overflow-hidden w-full top-0 pointer-events-none">
-            <div className="absolute w-full h-[calc(100vh+00px)] css-blurry-gradient animate-slowSpin pointer-events-none top-0" />
+            <div className="fixed w-full h-[calc(100vh+00px)] css-blurry-gradient animate-slowSpin pointer-events-none top-0" />
           </div>
           <div className="-translate-y-36 flex flex-col top-0 justify-center items-center text-2xl">
             <div className="flex text-center font-light tracking-wider">

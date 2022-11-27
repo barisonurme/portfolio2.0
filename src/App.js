@@ -7,6 +7,7 @@ import Works from "./components/Works";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link } from "react-scroll";
 import Skills from "./components/Skills";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -52,9 +53,12 @@ function App() {
           </div>
         </Link>
       </div>
-      <div className="w-full flex justify-center items-center">
-        <Skills />
-      </div>
+      <Fade delay={300} duration={3000}>
+        <div className="w-full flex justify-center items-center">
+          <Skills />
+        </div>
+      </Fade>
+      <Contact />
     </>
   );
 }

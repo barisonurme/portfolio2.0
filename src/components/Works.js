@@ -4,32 +4,62 @@ import Work from "./Work";
 
 const Works = () => {
   const [workModalActive, setWorkModalActive] = useState(false);
+  const [activeFilters, setActiveFilters] = useState([]);
   const [selectedWork, setSelectedWork] = useState([]);
+  const [filteredWorkList, setFilteredWorkList] = useState(workList);
+
+  const filterWorkHandler = (clickedFilter) => {
+    setFilteredWorkList(workList);
+    console.log(clickedFilter);
+    for (const filter in filters) {
+      filters[filter].status = false;
+
+      if (filters[filter].filter === clickedFilter)
+        filters[filter].status = true;
+    }
+    setActiveFilters(filters);
+
+    if (clickedFilter === "all") {
+      return;
+    }
+
+    setFilteredWorkList(
+      workList.filter((work) => work.category === clickedFilter)
+    );
+  };
+
   return (
-    <div name="works">
+    <div
+      name="works"
+      className="w-full flex justify-center items-center flex-col"
+    >
       <div className="flex justify-center items-center p-4 w-full max-w-5xl gap-4 flex-wrap">
-        <div className="text-rose-500">All</div>
-        <div className="hover:text-rose-500 cursor-pointer duration-500">
-          Web Application
-        </div>
-        <div className="hover:text-rose-500 cursor-pointer duration-500">
-          Mobile App
-        </div>
-        <div className="hover:text-rose-500 cursor-pointer duration-500">
-          Graphic Design
-        </div>
-        <div className="hover:text-rose-500 cursor-pointer duration-500">
-          Motion Graphic
-        </div>
-        <div className="hover:text-rose-500 cursor-pointer duration-500">
-          Game Development
-        </div>
+        {filters.map((filter) => (
+          <div
+            key={Math.random()}
+            onClick={() => filterWorkHandler(filter.filter)}
+            className={`hover:text-rose-500 cursor-pointer duration-500 ${
+              filter.status && "text-rose-500"
+            }`}
+          >
+            {filter.text}
+          </div>
+        ))}
       </div>
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mt-10 p-4">
-        {workList.map((work) => (
+      <div
+        className={`relative grid ${
+          filteredWorkList.length <= 1 ? "md:grid-cols-1" : "md:grid-cols-2"
+        } gap-8 w-full max-w-5xl mt-10 p-4`}
+      >
+        {filteredWorkList.length === 0 && (
+          <div className="relative flex justify-center items-center bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600 z-30">
+            Nothing to show here.
+          </div>
+        )}
+        {filteredWorkList.map((work) => (
           <div
             key={work.title}
-            className="relative flex gap-2 flex-col justify-center items-start p-8 bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600  z-30"
+            className="relative flex gap-2 flex-col justify-center items-start p-8 bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600 z-30"
           >
             <div className="bg-rose-500 w-12 h-12 rounded-md flex justify-center items-center text-xl font-bold">
               {work.mainLang}
@@ -63,11 +93,19 @@ const Works = () => {
           </div>
         ))}
 
-        <div className="absolute w-full z-10 scale-150 md:scale-110 translate-y-28">
+        <div
+          className={`absolute w-full z-10 scale-150 md:scale-110 duration-1000  pointer-events-none ${
+            filteredWorkList.length <= 4 && "blur-sm opacity-10"
+          } `}
+        >
           {circles}
         </div>
       </div>
-      <Work onBackdropClicked={() => setWorkModalActive(false)} show={workModalActive} currentWork={selectedWork} />
+      <Work
+        onBackdropClicked={() => setWorkModalActive(false)}
+        show={workModalActive}
+        currentWork={selectedWork}
+      />
     </div>
   );
 };
@@ -341,6 +379,39 @@ const workList = [
         buttonActive: false,
       },
     ],
+  },
+];
+
+const filters = [
+  {
+    text: "All Works",
+    status: true,
+    filter: "all",
+  },
+  {
+    text: "Web Development",
+    status: false,
+    filter: "webApp",
+  },
+  {
+    text: "Mobile App",
+    status: false,
+    filter: "mobileApp",
+  },
+  {
+    text: "Graphic Design",
+    status: false,
+    filter: "graphicDesign",
+  },
+  {
+    text: "Motion Graphics",
+    status: false,
+    filter: "motionGraph",
+  },
+  {
+    text: "Game Development",
+    status: false,
+    filter: "gameDev",
   },
 ];
 

@@ -37,6 +37,7 @@ const Navigation = () => {
             HOME
           </nav>
           <Link
+            smooth={true}
             to="about"
             offset={-90}
             className="cursor-pointer hover:text-rose-500 duration-500"
@@ -44,6 +45,7 @@ const Navigation = () => {
             ABOUT
           </Link>
           <Link
+            smooth={true}
             to="works"
             offset={-90}
             className="cursor-pointer hover:text-rose-500 duration-500"
@@ -51,6 +53,7 @@ const Navigation = () => {
             PROJECTS
           </Link>
           <Link
+            smooth={true}
             to="skills"
             offset={-90}
             className="cursor-pointer hover:text-rose-500 duration-500"

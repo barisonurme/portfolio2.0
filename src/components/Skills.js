@@ -17,7 +17,10 @@ import Tooltip from "./Tooltip";
 
 const Skills = () => {
   return (
-    <div className="flex flex-col w-full gap-8 max-w-5xl items-center p-32">
+    <div
+      name="skills"
+      className="flex flex-col w-full gap-8 max-w-5xl items-center p-32"
+    >
       <div className="flex text-white text-4xl">
         <div className="whitespace-nowrap">These are some of</div>
         <div className="text-rose-500 whitespace-nowrap">

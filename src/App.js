@@ -6,6 +6,7 @@ import Works from "./components/Works";
 
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link } from "react-scroll";
+import Skills from "./components/Skills";
 
 function App() {
   return (
@@ -50,6 +51,9 @@ function App() {
             <RiArrowDropDownLine size={35} className="animate-bounce" />
           </div>
         </Link>
+      </div>
+      <div className="w-full flex justify-center items-center">
+        <Skills />
       </div>
     </>
   );

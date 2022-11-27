@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import Work from "./Work";
 
 const Works = () => {
+  const [workModalActive, setWorkModalActive] = useState(false);
+  const [selectedWork, setSelectedWork] = useState([]);
   return (
     <div name="works">
       <div className="flex justify-center items-center p-4 w-full max-w-5xl gap-4 flex-wrap">
@@ -43,7 +46,13 @@ const Works = () => {
                 </div>
               ))}
             </div>
-            <div className="mt-10 text-rose-500 w-14 h-6 flex items-center justify-start cursor-pointer group p-4 pl-0">
+            <div
+              onClick={() => {
+                setSelectedWork(work);
+                setWorkModalActive(true);
+              }}
+              className="mt-10 text-rose-500 w-14 h-6 flex items-center justify-start cursor-pointer group p-4 pl-0"
+            >
               <div className="group-hover:translate-x-10 duration-500 group-hover:opacity-0">
                 Details
               </div>
@@ -54,8 +63,11 @@ const Works = () => {
           </div>
         ))}
 
-        <div className="absolute w-full z-10 scale-150 md:scale-110 translate-y-28">{circles}</div>
+        <div className="absolute w-full z-10 scale-150 md:scale-110 translate-y-28">
+          {circles}
+        </div>
       </div>
+      <Work show={workModalActive} currentWork={selectedWork} />
     </div>
   );
 };

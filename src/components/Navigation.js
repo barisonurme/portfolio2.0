@@ -29,7 +29,7 @@ const Navigation = () => {
           <div className="bg-white group-hover:bg-rose-500 duration-500 h-px w-4"></div>
           <div className="bg-white group-hover:bg-rose-500 duration-500 h-px w-6"></div>
         </div>
-        <div className="flex w-full max-w-xl p-4 justify-between items-center">
+        <div className="hidden md:flex w-full max-w-xl p-4 justify-between items-center">
           <nav
             onClick={() => scroll.scrollToTop()}
             className="cursor-pointer hover:text-rose-500 duration-500"

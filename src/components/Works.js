@@ -4,7 +4,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 const Works = () => {
   return (
     <div name="works">
-      <div className="flex justify-center items-center p-4 w-full max-w-5xl gap-4">
+      <div className="flex justify-center items-center p-4 w-full max-w-5xl gap-4 flex-wrap">
         <div className="text-rose-500">All</div>
         <div className="hover:text-rose-500 cursor-pointer duration-500">
           Web Application
@@ -22,7 +22,7 @@ const Works = () => {
           Game Development
         </div>
       </div>
-      <div className="relative grid grid-cols-2 gap-8 w-full max-w-5xl mt-10">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mt-10 p-4">
         {workList.map((work) => (
           <div
             key={work.title}
@@ -33,7 +33,7 @@ const Works = () => {
             </div>
             <div className="text-xl">{work.title}</div>
             <div className="text-sm text-slate-500">{work.longDescription}</div>
-            <div className="flex gap-2 mt-2">
+            <div className="flex gap-2 mt-2 flex-wrap">
               {work.usedWhileWorking.map((used) => (
                 <div
                   key={work.title + Math.random()}
@@ -54,7 +54,7 @@ const Works = () => {
           </div>
         ))}
 
-        <div className="absolute w-full z-10">{circles}</div>
+        <div className="absolute w-full z-10 scale-150 md:scale-110 translate-y-28">{circles}</div>
       </div>
     </div>
   );

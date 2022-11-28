@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Work from "./Work";
 
+import autoAnimate from "@formkit/auto-animate";
+
 const Works = () => {
   const [workModalActive, setWorkModalActive] = useState(false);
-  const [activeFilters, setActiveFilters] = useState([]);
   const [selectedWork, setSelectedWork] = useState([]);
   const [filteredWorkList, setFilteredWorkList] = useState(workList);
+
+  const parent = useRef(null);
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current);
+  }, [parent]);
 
   const filterWorkHandler = (clickedFilter) => {
     setFilteredWorkList(workList);
@@ -17,7 +24,6 @@ const Works = () => {
       if (filters[filter].filter === clickedFilter)
         filters[filter].status = true;
     }
-    setActiveFilters(filters);
 
     if (clickedFilter === "all") {
       return;
@@ -47,6 +53,7 @@ const Works = () => {
         ))}
       </div>
       <div
+        ref={parent}
         className={`relative grid ${
           filteredWorkList.length <= 1 ? "md:grid-cols-1" : "md:grid-cols-2"
         } gap-8 w-full max-w-5xl mt-10 p-4`}
@@ -94,11 +101,13 @@ const Works = () => {
         ))}
 
         <div
-          className={`absolute w-full z-10 scale-150 md:scale-110 duration-1000  pointer-events-none ${
-            filteredWorkList.length <= 4 && "blur-sm opacity-10"
+          className={`absolute w-full overflow-hidden z-10 duration-1000 pointer-events-none scale-100 xl:scale-125 translate-y-0 xl:translate-y-14 ${
+            filteredWorkList.length <= 4 && "opacity-10"
           } `}
         >
-          {circles}
+          <div className="scale-150 translate-y-96 md:translate-y-20 h-[1500px] md:scale-100">
+            {circles}
+          </div>
         </div>
       </div>
       <Work
@@ -323,18 +332,18 @@ const workList = [
     longDescription:
       "Weather app that allows users search for city and add city to watch list. Used api called openweathermap.org.",
     category: "webApp",
-    thumbnail: "#",
     heroImage: "#",
-    pageBgColor: "#",
-    baseColor: "#",
-    secondaryTextColor: "#",
-    textColor: "#",
+    thumbnail: "#",
+    pageBgColor: "bg-rose-500",
+    baseColor: "bg-rose-500",
+    secondaryTextColor: "text-rose-500",
+    textColor: "text-rose-500",
     usedWhileWorking: ["ReactJs", "Redux"],
     links: [
       {
         text: "Source Code </>",
-        link: "#",
-        buttonActive: false,
+        link: "https://github.com/barisonurme/weather-app",
+        buttonActive: true,
       },
       {
         text: "Live Demo",
@@ -357,16 +366,16 @@ const workList = [
     category: "webApp",
     thumbnail: "#",
     heroImage: "#",
-    pageBgColor: "#",
-    baseColor: "#",
-    secondaryTextColor: "#",
-    textColor: "#",
-    usedWhileWorking: ["ReactJs", "Node.Js"],
+    pageBgColor: "bg-rose-500",
+    baseColor: "bg-rose-500",
+    secondaryTextColor: "text-rose-500",
+    textColor: "text-rose-500",
+    usedWhileWorking: ["ReactJs", "Redux"],
     links: [
       {
         text: "Source Code </>",
-        link: "#",
-        buttonActive: false,
+        link: "https://github.com/barisonurme/tcbm-kurlari",
+        buttonActive: true,
       },
       {
         text: "Live Demo",
@@ -384,7 +393,7 @@ const workList = [
 
 const filters = [
   {
-    text: "All Works",
+    text: "All Projects",
     status: true,
     filter: "all",
   },

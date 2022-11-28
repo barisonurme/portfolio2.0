@@ -21,19 +21,20 @@ function App() {
           <div className="flex justify-center h-[calc(100vh+1000px)] items-center absolute overflow-hidden w-full top-0 pointer-events-none">
             <div className="fixed w-full h-[calc(100vh+00px)] css-blurry-gradient animate-slowSpin pointer-events-none top-0" />
           </div>
-          <div className="-translate-y-36 flex flex-col top-0 justify-center items-center text-2xl">
-            <div className="flex text-center font-light tracking-wider">
+          <div className="-translate-y-36 flex flex-col top-0 justify-center items-center text-sm md:text-2xl w-full overflow-hidden">
+            <div className="flex text-center font-light tracking-wider p-4">
               Hello, I'm Barış. <br />
-              Developer & Designer based on Antalya. I love
+              Developer & Designer based on Antalya.{" "}
+              <br className="flex md:hidden" />I love
             </div>
             <SlidingText
               time={3000}
               texts={[
                 { text: "Web App" },
+                { text: "Mobile App" },
                 { text: "Game Dev" },
                 { text: "Design" },
                 { text: "Animation" },
-                { text: "Mobile" },
               ]}
             />
           </div>
@@ -58,7 +59,9 @@ function App() {
           <Skills />
         </div>
       </Fade>
-      <Contact />
+      <Fade delay={300} duration={3000}>
+        <Contact />
+      </Fade>
     </>
   );
 }

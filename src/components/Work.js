@@ -2,15 +2,17 @@ import React from "react";
 
 const Work = (props) => {
   const { show, currentWork } = props;
+
+
   return (
     <>
       {show && (
-        <div className="bg-slate-800/10 backdrop-blur-xl w-full h-screen z-40 p-10 fixed inset-0 justify-center items-center flex">
+        <div className="bg-slate-800/10 backdrop-blur-xl w-full h-screen z-40 p-10 fixed inset-0 justify-center items-center flex overflow-scroll">
           {/*  */}
-          <div className="flex flex-col md:flex-row  bg-slate-800/30 border border-slate-700 rounded-md w-full max-w-7xl min-h-[500px] overflow-hidden">
+          <div className="flex flex-col md:flex-row  bg-slate-800/30 border border-slate-700 rounded-md w-full max-w-7xl h-auto overflow-hidden">
             <div className="w-full flex justify-center items-start md:items-center">
-              <div className="relative w-full md:min-h-[500px] h-40 bg-gray-500 flex">
-                <img src={currentWork.heroImage} className="object-cover" />
+              <div className="relative w-full h-auto flex overflow-hidden">
+                <img  alt="project" src={currentWork.heroImage} className="object-cover  md:rounded-l-md rounded-t-md" />
                 {/* <div className=" min-h-[500px] flex justify-center items-center p-4 bg-gradient-to-r cursor-pointer duration-500">
                   {"<"}
                 </div>
@@ -30,7 +32,7 @@ const Work = (props) => {
             <div className="w-full flex justify-start p-10 items-center">
               <div className="flex flex-col">
                 <div className="text-xl">{currentWork.title}</div>
-                <div className="text-slate-300/30">
+                <div className="text-slate-300/30 text-xs md:text-base">
                   {currentWork.longDescription}
                 </div>
                 <div className="flex flex-col">
@@ -53,7 +55,7 @@ const Work = (props) => {
                             if (link.text === "Video") {
                               // setVideoLink(link.link);
                               // setSecondContainer(true);
-                              return;
+                              // return;
                             }
                             window.open(`${link.link}`, "_blank");
                           }}
@@ -61,8 +63,8 @@ const Work = (props) => {
                           className={`${
                             link.buttonActive
                               ? `${currentWork.baseColor} cursor-pointer`
-                              : "bg-zinc-400 dark:bg-zinc-700 opacity-70 cursor-not-allowed"
-                          } duration-500 hover:bg-zinc-900   text-white p-2 pl-4 pr-4 mr-2 mt-2 rounded-xl whitespace-nowrap`}
+                              : "bg-zinc-400 dark:bg-zinc-700 opacity-70 cursor-not-allowed hidden"
+                          } duration-500 hover:bg-zinc-900   text-white p-2 pl-4 pr-4 text-xs mr-2 mt-2 rounded-md whitespace-nowrap`}
                         >
                           {link.text}
                         </div>

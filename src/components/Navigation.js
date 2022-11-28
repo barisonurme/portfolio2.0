@@ -20,10 +20,10 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="flex w-full p-10 h-32 justify-between items-center top-0">
+      <nav className="flex w-full p-10 h-32 justify-end md:justify-between items-center top-0">
         <div
           onClick={() => setIsHamburgerMenuActive(!isHamburgerMenuActive)}
-          className="select-none cursor-pointer p-4 group h-12 justify-between items-start flex flex-col"
+          className="select-none cursor-pointer p-4 group h-12 justify-between items-end md:items-start flex flex-col"
         >
           <div className="bg-white group-hover:bg-rose-500 duration-500 h-px w-6"></div>
           <div className="bg-white group-hover:bg-rose-500 duration-500 h-px w-4"></div>
@@ -45,8 +45,8 @@ const Navigation = () => {
             ABOUT
           </Link>
           <Link
-            smooth={true}
             to="works"
+            smooth={true}
             offset={-90}
             className="cursor-pointer hover:text-rose-500 duration-500"
           >
@@ -64,7 +64,7 @@ const Navigation = () => {
         <button
           to="contact"
           offset={-90}
-          className="p-2 pl-4 pr-4 hover:bg-rose-500 duration-500"
+          className="hidden md:flex p-2 pl-4 pr-4 hover:bg-rose-500 duration-500"
         >
           Contact
         </button>

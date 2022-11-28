@@ -53,7 +53,7 @@ const Works = () => {
         ))}
       </div>
       <div
-        ref={parent}
+        // ref={parent}
         className={`relative grid ${
           filteredWorkList.length <= 1 ? "md:grid-cols-1" : "md:grid-cols-2"
         } gap-8 w-full max-w-5xl mt-10 p-4`}
@@ -374,7 +374,7 @@ const workList = [
     links: [
       {
         text: "Source Code </>",
-        link: "https://github.com/barisonurme/tcbm-kurlari",
+        link: "https://github.com/barisonurme/tcmb-kurlari",
         buttonActive: true,
       },
       {

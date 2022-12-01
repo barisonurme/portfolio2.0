@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { sendForm } from "../config/firebase";
 import useInput from "../hooks/use-input";
+
+import Toast from "./Toaster/Toaster";
 
 const Contact = () => {
   const {
@@ -11,6 +13,7 @@ const Contact = () => {
     focusHandler: emailOnFocusHandler,
     isFocused: emailIsFocused,
     isEmpty: isEmailInputEmpty,
+    clearInput: clearEmailInput,
   } = useInput((value) => value.trim() !== "");
 
   const {
@@ -21,6 +24,7 @@ const Contact = () => {
     focusHandler: messageOnFocusHandler,
     isFocused: messageIsFocused,
     isEmpty: isMessageInputEmpty,
+    clearInput: clearMessageInput,
   } = useInput((value) => value.trim() !== "");
 
   let contactFormIsValid = false;
@@ -30,12 +34,19 @@ const Contact = () => {
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log("send?");
+    clearEmailInput();
+    clearMessageInput();
+    if (!contactFormIsValid) {
+      new Toast({ text: "Form is empty!" });
+      return;
+    }
     const response = await sendForm(enteredEmail, enteredMessage);
     if (response) {
-      console.log("Message Sended.");
+      console.log("sended!");
+      new Toast({ text: "Message Sended." });
     } else {
-      console.log("Failed.");
+      console.log("failed!");
+      new Toast({ text: "Failed." });
     }
   };
 
@@ -58,6 +69,7 @@ const Contact = () => {
           E-mail
         </label>
         <input
+          id="emailInput"
           onChange={emailChangeHandler}
           onBlur={emailInputBlurHandler}
           value={enteredEmail}
@@ -75,6 +87,7 @@ const Contact = () => {
           Message
         </label>
         <textarea
+          id="messageArea"
           onChange={messageChangeHandler}
           onBlur={messageInputBlurHandler}
           value={enteredMessage}

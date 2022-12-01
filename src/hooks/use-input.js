@@ -24,6 +24,10 @@ const useInput = (validateValue) => {
     setIsFocused(true);
   };
 
+  const clearInput = () => {
+    setEnteredValue("");
+  };
+
   return {
     value: enteredValue,
     isValid: valueIsValid,
@@ -33,6 +37,7 @@ const useInput = (validateValue) => {
     valueChangeHandler,
     inputBlurHandler,
     focusHandler,
+    clearInput,
   };
 };
 

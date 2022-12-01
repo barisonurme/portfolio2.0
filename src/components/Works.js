@@ -330,7 +330,7 @@ const workList = [
     mainLang: "JS",
     description: "Weather App.",
     longDescription:
-      "Weather app that allows users search for city and add city to watch list. Used api called openweathermap.org.",
+      "Weather app that allows users search for any city in the world. Used api called openweathermap.org.",
     category: "webApp",
     heroImage: "/images/works/weatherapp/screenshot01.jpg",
     thumbnail: "#",
@@ -338,7 +338,7 @@ const workList = [
     baseColor: "bg-rose-500",
     secondaryTextColor: "text-rose-500",
     textColor: "text-rose-500",
-    usedWhileWorking: ["ReactJs", "Redux"],
+    usedWhileWorking: ["ReactJs"],
     links: [
       {
         text: "Source Code </>",

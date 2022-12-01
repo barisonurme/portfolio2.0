@@ -20,14 +20,24 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="flex w-full p-10 h-32 justify-end md:justify-between items-center top-0">
+      <nav className="flex w-full p-2 md:p-10 h-32 justify-end md:justify-between items-center top-0">
         <div
           onClick={() => setIsHamburgerMenuActive(!isHamburgerMenuActive)}
-          className="select-none cursor-pointer p-4 group h-12 justify-between items-end md:items-start flex flex-col"
+          className={`select-none  z-50 cursor-pointer p-4 group h-12 justify-between items-end md:items-start duration-500 flex flex-col ${
+            isScrolled && "fixed"
+          } ${isHamburgerMenuActive && "rotate-180"}`}
         >
-          <div className="bg-white group-hover:bg-rose-500 duration-500 h-px w-6"></div>
-          <div className="bg-white group-hover:bg-rose-500 duration-500 h-px w-4"></div>
-          <div className="bg-white group-hover:bg-rose-500 duration-500 h-px w-6"></div>
+          <div
+            className={`bg-white group-hover:bg-rose-500 duration-500 h-px w-6 ${isHamburgerMenuActive && "rotate-45 translate-y-[7px]"}`}
+          ></div>
+          <div
+            className={`bg-white group-hover:bg-rose-500 duration-500 h-px w-4 ${
+              isHamburgerMenuActive && "hidden"
+            }`}
+          ></div>
+          <div
+            className={`bg-white group-hover:bg-rose-500 duration-500 h-px w-6  ${isHamburgerMenuActive && "-rotate-45 -translate-y-[8px]"}`}
+          ></div>
         </div>
         <div className="hidden md:flex w-full max-w-xl p-4 justify-between items-center">
           <nav
@@ -61,13 +71,13 @@ const Navigation = () => {
             SKILLS
           </Link>
         </div>
-        <button
+        <Link
           to="contact"
           offset={-90}
-          className="hidden md:flex p-2 pl-4 pr-4 hover:bg-rose-500 duration-500"
+          className="hidden lg:flex p-2 pl-4 pr-4 hover:bg-rose-500 duration-500"
         >
           Contact
-        </button>
+        </Link>
         <HamburgerMenu
           onBackDropClick={() => setIsHamburgerMenuActive(false)}
           show={isHamburgerMenuActive}

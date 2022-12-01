@@ -59,14 +59,14 @@ const Works = () => {
         } gap-8 w-full max-w-5xl mt-10 p-4`}
       >
         {filteredWorkList.length === 0 && (
-          <div className="relative flex justify-center items-center bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600 z-30">
+          <div className="relative flex justify-center items-center bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600 z-20">
             Nothing to show here.
           </div>
         )}
         {filteredWorkList.map((work) => (
           <div
             key={work.title}
-            className="relative flex gap-2 flex-col justify-center items-start p-8 bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600 z-30"
+            className="relative flex gap-2 flex-col justify-center items-start p-8 bg-slate-800/30 backdrop-blur-md w-full h-96 rounded-xl border border-slate-600 z-20"
           >
             <div className="bg-rose-500 w-12 h-12 rounded-md flex justify-center items-center text-xl font-bold">
               {work.mainLang}

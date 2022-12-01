@@ -23,7 +23,7 @@ const Navigation = () => {
       <nav className="flex w-full p-2 md:p-10 h-32 justify-end md:justify-between items-center top-0">
         <div
           onClick={() => setIsHamburgerMenuActive(!isHamburgerMenuActive)}
-          className={`select-none  z-50 cursor-pointer p-4 group h-12 justify-between items-end md:items-start duration-500 flex flex-col ${
+          className={`select-none  z-40 cursor-pointer p-4 group h-12 justify-between items-end md:items-start duration-500 flex flex-col ${
             isScrolled && "fixed"
           } ${isHamburgerMenuActive && "rotate-180"}`}
         >

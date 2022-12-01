@@ -7,7 +7,7 @@ const HamburgerMenu = (props) => {
   return (
     <>
       {show && (
-        <div className="flex backdrop-blur-xl flex-col bg-slate-800/10 inset-0 justify-center items-center w-full h-screen fixed z-40 text-white">
+        <div className="flex backdrop-blur-xl flex-col bg-slate-800/10 inset-0 justify-center items-center w-full h-screen fixed z-30 text-white">
           <div className="grid gap-8 text-5xl  text-center">
             <Link
               smooth={true}

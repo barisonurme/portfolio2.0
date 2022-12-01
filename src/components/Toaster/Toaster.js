@@ -15,7 +15,7 @@ export default class Toast {
     }, 2000);
     setTimeout(() => {
       this.#toastElem.classList.add("entered");
-    }, 500);
+    }, 50);
 
     // Create Toaster Container if not exists
     const container =

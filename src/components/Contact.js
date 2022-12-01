@@ -97,8 +97,8 @@ const Contact = () => {
         <div className="h-24 w-full flex justify-center items-center p-4">
           <button
             type="submit"
-            className={`bg-rose-500 duration-500 p-4 pl-6 pr-6 rounded-md opacity-0 ${
-              contactFormIsValid && "opacity-100"
+            className={`bg-rose-500 duration-500 p-4 pl-6 pr-6 rounded-md opacity-0 pointer-events-none ${
+              contactFormIsValid && "opacity-100 pointer-events-auto"
             }`}
           >
             Send Message

@@ -332,7 +332,7 @@ const workList = [
     longDescription:
       "Weather app that allows users search for city and add city to watch list. Used api called openweathermap.org.",
     category: "webApp",
-    heroImage: "#",
+    heroImage: "/images/works/weatherapp/screenshot01.jpg",
     thumbnail: "#",
     pageBgColor: "bg-rose-500",
     baseColor: "bg-rose-500",
@@ -365,12 +365,12 @@ const workList = [
       "The Central Bank of the Republic of Turkey currency tracker. Users can register and login through Node.JS server.",
     category: "webApp",
     thumbnail: "#",
-    heroImage: "#",
+    heroImage: "/images/works/tcbmkurlari/screenshot01.jpg",
     pageBgColor: "bg-rose-500",
     baseColor: "bg-rose-500",
     secondaryTextColor: "text-rose-500",
     textColor: "text-rose-500",
-    usedWhileWorking: ["ReactJs", "Redux"],
+    usedWhileWorking: ["ReactJs", "Node.JS"],
     links: [
       {
         text: "Source Code </>",
